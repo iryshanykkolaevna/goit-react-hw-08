@@ -1,53 +1,69 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
-import * as Yup from "yup";
-import css from './ContactForm.module.css'
-
+import { Field, Form, Formik } from 'formik';
+import { ErrorMessage } from 'formik';
+import css from './ContactForm.module.css';
+import { AiOutlineUserAdd } from 'react-icons/ai';
+import * as yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contacts/operations';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
 
-  const FeedbackSchema = Yup.object().shape({
-    name: Yup.string()
-      .min(3, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Required"),
-
-    number: Yup.string()
-      .matches(/^\d{3}-\d{3}-\d{4}$/, 'Number format: XXX-XXX-XXXX')
-      .required("Required")
-  });
-
-  const handleSubmit = (values, actions) => {
-    dispatch(addContact({
-      name: values.name.trim(),
-      number: values.number.trim()
-    }));
+  const handleSubmit = (data, actions) => {
+    dispatch(addContact(data));
     actions.resetForm();
   };
 
+  const contactSchema = yup.object().shape({
+    name: yup
+      .string()
+      .min(3, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+    number: yup
+      .string()
+      .min(3, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+  });
+
   return (
-    <div className={css.formWrapper}>
+    <div>
       <Formik
-        initialValues={{ name: "", number: "" }}
+        initialValues={{ name: '', number: '' }}
         onSubmit={handleSubmit}
-        validationSchema={FeedbackSchema}
+        validationSchema={contactSchema}
       >
         <Form className={css.form}>
-          <label className={css.label}>Name
-            <Field className={css.field} type="text" name="name" />
-            <ErrorMessage className={css.errorMessage} name="name" component="span" />
-          </label>
-          <label className={css.label}>Number
-            <Field className={css.field} type="text" name="number" />
-            <ErrorMessage className={css.errorMessage} name="number" component="span" />
-          </label>
-          <button className={css.btn} type="submit">Add contact</button>
+          <label className={css.label}>Name</label>
+          <Field
+            className={css.field}
+            type="text"
+            name="name"
+            placeholder="Tom Davis "
+          ></Field>
+          <span className={css.errorMessage}>
+            <ErrorMessage name="name" as="span" />
+          </span>
+
+          <label className={css.label}>Number</label>
+          <Field
+            className={css.field}
+            type="text"
+            name="number"
+            placeholder="123-45-67"
+          ></Field>
+          <span className={css.errorMessage}>
+            <ErrorMessage name="number" as="span" />
+          </span>
+
+          <button className={css.addBtn} type="submit">
+            Add contact <AiOutlineUserAdd size={'20'} />
+          </button>
         </Form>
       </Formik>
     </div>
-  )
-}
+  );
+};
 
 export default ContactForm;

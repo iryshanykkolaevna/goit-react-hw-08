@@ -1,15 +1,25 @@
-.searchBox {
-    max-width: 320px;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.label {
+.searchWrapper {
+    width: 390px;
     display: flex;
     flex-direction: column;
+    padding: 20px 0;
+    position: relative;
+
 }
 
-.field {
-    height: 34px;
-    padding: 0 6px;
+.input {
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.icon {
+    position: absolute;
+    left: 360px;
+    top: 55px;
+}
+
+.searchText {
+    margin-bottom: 5px;
+    font-weight: 500;
 }
