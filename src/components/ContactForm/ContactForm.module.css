@@ -38,7 +38,7 @@
 }
 
 .field::placeholder {
-    color: yellow;
+    color: rgb(24, 230, 245);
 }
 
 .addBtn {

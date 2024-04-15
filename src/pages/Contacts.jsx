@@ -13,10 +13,8 @@ const styles = {
     height: '100vh',
     paddingTop: '110px',
     paddingRight: '40px',
-    // display: 'flex',
     paddingLeft: '40px',
-        // alignItems: 'center',
-    backgroundColor: '#ad70e5',
+    backgroundColor: '#40E0D0',
     },
     formWrap: {
         display: 'flex',
