@@ -14,7 +14,7 @@ const styles = {
     paddingTop: '110px',
     paddingRight: '40px',
     paddingLeft: '40px',
-    backgroundColor: '#40E0D0',
+    backgroundColor: '##70DBCD',
     },
     formWrap: {
         display: 'flex',
