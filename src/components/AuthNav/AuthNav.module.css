@@ -8,7 +8,6 @@
 
 .link {
     color: black;
-    /* background-color: white; */
     display: flex;
     text-decoration: none;
     padding: 2px 15px;
@@ -23,9 +22,8 @@
 }
 
 .active {
-    color: yellow;
+    color: rgb(23, 215, 244);
     font-weight: bold;
-    /* background-color: yellow; */
     border-top: 3px solid white;
     border-left: 3px solid white;
 

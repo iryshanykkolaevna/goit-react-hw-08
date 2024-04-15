@@ -57,8 +57,8 @@ button {
 
   border-bottom: 2px solid black;
   border-right: 2px solid black;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
+  border-top: 2px solid rgb(8, 8, 8);
+  border-left: 2px solid rgb(8, 8, 8);
   background-color: transparent;
   padding: 0;
   font-size: 20px;
@@ -76,5 +76,5 @@ button {
 button:hover,
 button:focus {
   /* background-color: grey; */
-  color: yellow;
+  color: rgb(13, 215, 247);
 }

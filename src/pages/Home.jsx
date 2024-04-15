@@ -1,13 +1,11 @@
 import DocumentTitle from '../components/DocumentTitle';
-// import css from './Home.module.css'
 const styles = {
   container: {
-    paddingTop: '350px',
+    paddingTop: '460px',
     paddingRight: '80px',
-    // minHeight: 'calc(100vh - 50px)',
+    paddingLeft: '80px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-end',
   },
   title: {
     fontWeight: 500,
@@ -25,7 +23,7 @@ export default function Home() {
       <DocumentTitle>Home</DocumentTitle>
 
       <div style={styles.container}>
-        <h1 style={styles.title}>Your Contacts, <br/><span style={styles.span}>Your World,</span> <br /> Connected.</h1>
+        <h1 style={styles.title}>Connect <br/><span style={styles.span}>globally,</span> <br />act locally.</h1>
       </div>
     </>
   );
