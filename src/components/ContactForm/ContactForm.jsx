@@ -28,40 +28,44 @@ const ContactForm = () => {
   });
 
   return (
-    <div>
+    <div className={css.container}>
       <Formik
         initialValues={{ name: '', number: '' }}
         onSubmit={handleSubmit}
         validationSchema={contactSchema}
       >
         <Form className={css.form}>
-          <label className={css.label}>Name</label>
-          <Field
-            className={css.field}
-            type="text"
-            name="name"
-            placeholder="Tom Davis "
-          ></Field>
-          <span className={css.errorMessage}>
-            <ErrorMessage name="name" as="span" />
-          </span>
-
-          <label className={css.label}>Number</label>
-          <Field
-            className={css.field}
-            type="text"
-            name="number"
-            placeholder="123-45-67"
-          ></Field>
-          <span className={css.errorMessage}>
-            <ErrorMessage name="number" as="span" />
-          </span>
+          <div className={css.infoWrap}>
+            <label className={css.label}>Name</label>
+            <Field
+              className={css.field}
+              type="text"
+              name="name"
+              placeholder="Tom Davis "
+            ></Field>
+            <span className={css.errorMessage}>
+              <ErrorMessage name="name" as="span" />
+            </span>
+          </div>
+          <div className={css.infoWrap}>
+            <label className={css.label}>Number</label>
+            <Field
+              className={css.field}
+              type="text"
+              name="number"
+              placeholder="123-45-67"
+            ></Field>
+            <span className={css.errorMessage}>
+              <ErrorMessage name="number" as="span" />
+            </span>
+          </div>
 
           <button className={css.addBtn} type="submit">
-            Add contact <AiOutlineUserAdd size={'20'} />
+            Add contact
           </button>
         </Form>
       </Formik>
+      <div className={css.imgWrap}></div>
     </div>
   );
 };

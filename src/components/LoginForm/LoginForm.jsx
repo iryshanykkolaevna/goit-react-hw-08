@@ -1,7 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 
-import css from './LoginForm.module.css'
+import css from './LoginForm.module.css';
 
 const UserRegisterSchema = Yup.object().shape({
   email: Yup.string()
@@ -32,37 +32,30 @@ const LoginForm = ({ onLogin }) => {
       <Form className={css.form}>
         <h2 className={css.formTitle}>Login</h2>
 
-        <label className={css.label}>
-          <span className={css.labelText}>Email:</span>
-          <Field
-            className={css.formInput}
-            placeholder="alex@patron.com"
-            type="text"
-            name="email"
-          />
-          <ErrorMessage
-            className={css.errorMsg}
-            name="email"
-            component="span"
-          />
-        </label>
-        <label className={css.label}>
-          <span className={css.labelText}>Password:</span>
-          <Field
-            className={css.formInput}
-            placeholder="Enter your password"
-            type="password"
-            name="password"
-          />
-          <ErrorMessage
-            className={css.errorMsg}
-            name="password"
-            component="span"
-          />
-        </label>
+        <label className={css.label}>Email</label>
+        <Field
+          className={css.field}
+          placeholder="alex@patron.com"
+          type="text"
+          name="email"
+        />
+        <span className={css.errorMessage}>
+          <ErrorMessage name="email" as="span" />
+        </span>
+
+        <label className={css.label}>Password:</label>
+        <Field
+          className={css.field}
+          placeholder="Enter your password"
+          type="password"
+          name="password"
+        />
+        <span className={css.errorMessage}>
+          <ErrorMessage name="password" as="span" />
+        </span>
 
         <button
-          className={css.submitBtn}
+          className={css.signInBtn}
           type="submit"
           title="Click to register user"
           aria-label="Add new mailbox"

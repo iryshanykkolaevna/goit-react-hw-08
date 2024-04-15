@@ -1,13 +1,12 @@
 import { Field, Form, Formik } from 'formik';
 import { ErrorMessage } from 'formik';
 import css from './RegisterForm.module.css';
-import { AiOutlineUserAdd } from 'react-icons/ai';
 import * as yup from 'yup';
 
 const RegisterForm = ({onRegister}) => {
 
   const handleSubmit = (data, formActions) => {
-    onRegister(data);
+      onRegister(data);
     formActions.resetForm();
   };
 
@@ -33,7 +32,7 @@ const RegisterForm = ({onRegister}) => {
         validationSchema={userRegisterSchema}
       >
         <Form className={css.form}>
-          <h2>Register</h2>
+          <h2 className={css.title}>Register</h2>
           <label className={css.label}>Name</label>
           <Field
             className={css.field}
@@ -67,8 +66,8 @@ const RegisterForm = ({onRegister}) => {
             <ErrorMessage name="password" as="span" />
           </span>
 
-          <button className={css.addBtn} type="submit">
-            Sign up <AiOutlineUserAdd size={'20'} />
+          <button className={css.signUpBtn} type="submit">
+            Sign up 
           </button>
         </Form>
       </Formik>

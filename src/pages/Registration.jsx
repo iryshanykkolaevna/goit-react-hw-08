@@ -4,6 +4,17 @@ import { useDispatch } from 'react-redux';
 import { register } from '../redux/auth/operations';
 import RegisterForm from '../components/RegisterForm/RegisterForm';
 
+const styles = {
+  container: {
+    paddingTop: '200px',
+    paddingRight: '140px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  
+};
+
 export default function Register() {
     const dispatch = useDispatch();
 
@@ -12,7 +23,7 @@ export default function Register() {
     }
 
   return (
-    <div>
+    <div style={styles.container}>
       <DocumentTitle>Registration</DocumentTitle>
           <RegisterForm onRegister={ onRegister} />
     </div>

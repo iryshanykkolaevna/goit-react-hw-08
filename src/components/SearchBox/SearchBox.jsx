@@ -21,6 +21,7 @@ const SearchBox = () => {
         type="text"
         value={filter}
         onChange={handleSearch}
+        placeholder="Enter name or number..."
       />
       <span className={css.icon}>
         <FcSearch />

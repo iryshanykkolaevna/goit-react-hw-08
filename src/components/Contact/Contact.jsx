@@ -1,6 +1,5 @@
 import { FaPhone } from 'react-icons/fa6';
 import { IoPerson } from 'react-icons/io5';
-import { AiOutlineUserDelete } from 'react-icons/ai';
 import css from './Contact.module.css';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
@@ -32,7 +31,7 @@ const Contact = ({ id, name, number }) => {
         onClick={() => handleDelete(id)}
       >
         Detele
-        <AiOutlineUserDelete size={20} />
+        
       </button>
     </div>
   );

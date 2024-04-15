@@ -3,6 +3,16 @@ import { useDispatch } from 'react-redux';
 import { logIn } from '../redux/auth/operations';
 import LoginForm from '../components/LoginForm/LoginForm';
 
+const styles = {
+  container: {
+    paddingTop: '200px',
+    paddingRight: '140px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+};
+
 export default function Login() {
   const dispatch = useDispatch();
 
@@ -11,7 +21,7 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div style={styles.container}>
       <DocumentTitle>Login</DocumentTitle>
       <LoginForm onLogin={onLogin} />
     </div>
