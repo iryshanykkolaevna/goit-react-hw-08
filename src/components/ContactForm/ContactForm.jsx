@@ -1,7 +1,6 @@
 import { Field, Form, Formik } from 'formik';
 import { ErrorMessage } from 'formik';
 import css from './ContactForm.module.css';
-import { AiOutlineUserAdd } from 'react-icons/ai';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';

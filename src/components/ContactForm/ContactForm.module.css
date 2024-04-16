@@ -5,7 +5,7 @@
     width: 760px;
     height: 140px;
     gap: 24px;
-    background-image: url('../../img/bgImg.webp');
+    background-image: url('../../img/bglmg.webp');
     border-bottom: 2px solid black;
     border-right: 2px solid black;
     border-top: 2px solid white;
@@ -54,7 +54,3 @@
     color: red;
 }
 
-/* .imgWrap {
-  width: 350px;
-  height: 350px;
-  /* background-image: url('../../img/girlContact.webp'); */

@@ -2,11 +2,17 @@ import { Field, Form, Formik } from 'formik';
 import { ErrorMessage } from 'formik';
 import css from './RegisterForm.module.css';
 import * as yup from 'yup';
+import { register } from '../../redux/auth/operations';
+import { useDispatch } from 'react-redux';
 
-const RegisterForm = ({onRegister}) => {
+const RegistrationForm = () => {
+  const dispatch = useDispatch();
+  const onRegister = formData => {
+    dispatch(register(formData));
+  };
 
   const handleSubmit = (data, formActions) => {
-      onRegister(data);
+    onRegister(data);
     formActions.resetForm();
   };
 
@@ -67,7 +73,7 @@ const RegisterForm = ({onRegister}) => {
           </span>
 
           <button className={css.signUpBtn} type="submit">
-            Sign up 
+            Sign up
           </button>
         </Form>
       </Formik>
@@ -75,4 +81,4 @@ const RegisterForm = ({onRegister}) => {
   );
 };
 
-export default RegisterForm;
+export default RegistrationForm;

@@ -24,8 +24,6 @@ const styles = {
 
 export default function Contacts() {
   const dispatch = useDispatch();
-//   const isLoading = useSelector(selectIsLoading);
-//   const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -38,13 +36,7 @@ export default function Contacts() {
         <ContactForm />
         <SearchBox />
       </div>
-      {/* {isLoading && !error && <Loader />}
-      {error && (
-        <b>
-          There is a problem with the connection to the server, please try again
-          later
-        </b>
-      )} */}
+      {}
       <ContactList />
     </div>
   );

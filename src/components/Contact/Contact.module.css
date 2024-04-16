@@ -8,7 +8,7 @@
     padding: 20px;
     justify-content: space-between;
     align-items: center;
-    background-image: url('../../img/bgImg.webp');
+    background-image: url('../../img/bglmg.webp');
     background-position: 10% 50%;
     color: black;
 }
@@ -25,7 +25,6 @@
 }
 
 .contactText {
-    /* font-style: 40px; */
     font-weight: 500;
     margin: 0;
 }
